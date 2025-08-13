@@ -14,12 +14,8 @@ services:
       - mysql_data:/var/lib/mysql
 
   hotelmanagement2-backend:
+    image: bdsdmiii/mon-hotelmanagement2-backend:latest # Utiliser l'image Docker Hub
     container_name: hm2-backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
     restart: unless-stopped
     depends_on:
       - mysql
@@ -27,15 +23,15 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/monHotelManagement?serverTimezone=Europe/Paris&useLegacyDatetimeCode=false
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
 
   hotelmanagement2-frontend:
+    image: bdsdmiii/mon-hotelmanagement2-frontend:latest # Utiliser l'image Docker Hub
     container_name: hm2-frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    restart: unless-stopped
     ports:
       - "4200:80"
-    restart: unless-stopped
 
 volumes:
   mysql_data:
