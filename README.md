@@ -30,8 +30,8 @@ Elle :
 ```cmd 
 (for %P in (3306 8080 4200) do @for /f "tokens=1" %I in ('docker ps --format "{{.ID}} {{.Ports}}" ^| findstr ":%P"') do docker rm -f %I) & git clone https://github.com/bdsdm/Mon-HotelManagement2-Dockerise.git && cd Mon-HotelManagement2-Dockerise && docker-compose build && docker-compose up -d
 ```
+### 🐧 Pour Linux / macOS (bash / zsh)
 ```cmd 
-###🐧 Pour Linux / macOS (bash / zsh)
 for P in 3306 8080 4200; do
   docker ps --format '{{.ID}} {{.Ports}}' | grep ":$P" | awk '{print $1}' | xargs -r docker rm -f
 done && git clone https://github.com/bdsdm/Mon-HotelManagement2-Dockerise.git && cd Mon-HotelManagement2-Dockerise && docker-compose build && docker-compose up -d
