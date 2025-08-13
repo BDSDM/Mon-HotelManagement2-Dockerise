@@ -1,0 +1,68 @@
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  display: block; /* pas flex */
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  float: left;
+  line-height: 2rem;
+}
+
+/* Boutons alignés à droite */
+.login-button,
+.logout-button,
+.orange-button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0;
+  margin-right: 0.25rem;
+  float: right;
+  line-height: 2rem;
+}
+
+.navbar::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.login-button:hover,
+.logout-button:hover,
+.orange-button:hover {
+  background-color: darkorange;
+}
+.logo-image {
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+}
+.round-red-button {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%; /* rond parfait */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px; /* espace avec les autres éléments */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.round-red-button:hover {
+  background-color: darkred;
+}

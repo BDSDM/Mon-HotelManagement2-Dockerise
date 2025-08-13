@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="logo">
+    <img
+      src="assets/images/photo-hotel-paris.jpg"
+      alt="Logo"
+      class="logo-image"
+    />
+    HotelManager
+  </div>
+
+  <!-- ✅ Si l'utilisateur N'EST PAS connecté -->
+  <button
+    *ngIf="!authService.isLoggedIn()"
+    class="login-button"
+    (click)="openConnexionDialog()"
+  >
+    Connexion
+  </button>
+
+  <!-- ✅ Si l'utilisateur EST connecté -->
+  <ng-container *ngIf="authService.isLoggedIn()">
+    <button class="logout-button" (click)="logout()">Logout</button>
+    <button class="orange-button" routerLink="/dashboard">Dashboard</button>
+    <button class="orange-button" routerLink="/rooms">Rooms</button>
+    <button class="orange-button" routerLink="/homepage">Homepage</button>
+    <button class="round-red-button orange-button" (click)="onRedButtonClick()">
+      !
+    </button>
+  </ng-container>
+</nav>
