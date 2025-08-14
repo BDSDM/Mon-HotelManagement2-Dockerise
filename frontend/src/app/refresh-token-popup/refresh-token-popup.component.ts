@@ -22,6 +22,6 @@ export class RefreshTokenPopupComponent {
     this.logout();
   }
   logout() {
-    this.authService.logout();
+    this.authService.loGout();
   }
 }
